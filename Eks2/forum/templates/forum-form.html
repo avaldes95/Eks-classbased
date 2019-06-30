@@ -1,0 +1,13 @@
+{% extends forum-base.html %}
+{% load bootstrap4 %}
+
+{% block contentforum %}
+<h4>Create new forum</h4>
+
+  <form id="forumForm" action="{% urls 'forum:create'%}" method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <input type="submit" name="btn btn-primary" value="Creat Forum">
+  </form>
+
+{% endblock %}

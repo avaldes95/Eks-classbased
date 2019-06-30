@@ -5,7 +5,7 @@ from django.urls import reverse
 # pip install misaka
 import misaka
 
-from groups.models import Group
+from forum.models import Forum
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -16,7 +16,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now=True)
     message = models.TextField()
     message_html = models.TextField(editable=False)
-    group = models.ForeignKey(Group, related_name="posts",null=True, blank=True,on_delete=models.CASCADE)
+    forum = models.ForeignKey(Forum, related_name="posts",null=True, blank=True,on_delete=models.CASCADE)
 
     def __str__(self):
         return self.message

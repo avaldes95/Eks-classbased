@@ -1,0 +1,29 @@
+{% extends 'forum-base.html' %}
+{% block preforum%}
+<h1>{{forum.name}}</h1>
+<h2>Member Count: {{forum.members.count}}</h2>
+
+<div class="content">
+  {% if user in forum.members.all %}
+    <a href="{% url 'forum:leave' slug=forum.slug %}"
+      class='btn btn-warning'><span
+      class="glyphicon glyphicon-remove-circle"></span>Leave</a>
+  {% else %}
+    <a href="{% url 'forum:join' slug=forum.slug %}"
+      class='btn btn-warning'><span
+      class="glyphicon glyphicon-ok-circle"></span>Join</a>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block contentforum %}
+<div class="col-md-8">
+  {% if forum.posts.count ==0 %}
+    <h2>No posts yet</h2>
+  {% else %}
+    {% for post in forum.posts.all %}
+      {% include '_post.html' %}
+    {% endfor %}
+  {% endif %}
+</div>
+{% endblock %}

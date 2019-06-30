@@ -16,12 +16,12 @@ User = get_user_model()
 
 class PostList(SelectRelatedMixin, generic.ListView):
     model = models.Post
-    select_related = ("user", "group")
+    select_related = ("user", "forum")
 
 
 class UserPosts(generic.ListView):
     model = models.Post
-    template_name = "posts/user_post_list.html"
+    template_name = "user-post-list.html"
 
     def get_queryset(self):
         try:
@@ -41,7 +41,7 @@ class UserPosts(generic.ListView):
 
 class PostDetail(SelectRelatedMixin, generic.DetailView):
     model = models.Post
-    select_related = ("user", "group")
+    select_related = ("user", "forum")
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -52,7 +52,7 @@ class PostDetail(SelectRelatedMixin, generic.DetailView):
 
 class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
     # form_class = forms.PostForm
-    fields = ('message','group')
+    fields = ('message','forum')
     model = models.Post
 
     # def get_form_kwargs(self):
@@ -69,7 +69,7 @@ class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
 
 class DeletePost(LoginRequiredMixin, SelectRelatedMixin, generic.DeleteView):
     model = models.Post
-    select_related = ("user", "group")
+    select_related = ("user", "forum")
     success_url = reverse_lazy("posts:all")
 
     def get_queryset(self):

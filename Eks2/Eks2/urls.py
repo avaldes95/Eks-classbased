@@ -20,8 +20,10 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.HomePage.as_view(), name='home'),
-    #path('forums/', include("forum.urls", namespace="forum")),
+    # path('forums/', include("forum.urls", namespace="forum")),
     path('people/', views.PeoplePage.as_view(), name='peeps'),
     path('accounts/', include("accounts.urls", namespace="accounts")),
     path('accounts/', include("django.contrib.auth.urls")),
+    path('test/', views.TestPage.as_view(), name='test'),
+    path('thanks/', views.ThanksPage.as_view(), name='thanks'),
 ]

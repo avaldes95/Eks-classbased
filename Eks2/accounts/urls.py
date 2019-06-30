@@ -1,4 +1,5 @@
 from django.urls import path
+# auth_views is what gives us the LoginView and LogoutView pages
 from django.contrib.auth import views as auth_views
 from . import views
 
