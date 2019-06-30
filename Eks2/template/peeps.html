@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+  {% block title_block %}
+   Profiles
+  {% endblock %}
+  {% block content%}
+
+  <div class="container">
+    <!-- <div class="jumbotron"> -->
+      <h1 class="display-1" style="text-align:center;">People</h1>
+
+      <p class="lead" style="text-align:center;"><small>The somethings of Steve Ekstrom</small></p>
+
+      <div class="row">
+        <div class="col-4 px-0" ><a href="#"><img onmouseover="blurred(this)" onmouseout="normal(this)" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/04LDEYRW59.jpg" class="img-thumbnail img-fluid" alt="" style="border:0px;padding:0px;"></a></div>
+        <div class="col-4 px-0" ><a href="#"><img onmouseover="blurred(this)" onmouseout="normal(this)" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/90V03Q5Y60.jpg" class="img-thumbnail img-fluid" alt="" style="border:0;padding:0;"></a></div>
+        <div class="col-4 px-0" ><a href="#"><img onmouseover="blurred(this)" onmouseout="normal(this)" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/O83SF2RB6D.jpg" class="img-thumbnail img-fluid" alt="" style="border:0;padding:0;"></a></div>
+        <div class="col-4 px-0" ><a href="#"><img onmouseover="blurred(this)" onmouseout="normal(this)" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/5JVPSVP7EI.jpg" class="img-thumbnail img-fluid" alt="" style="border:0;padding:0;"></a></div>
+        <div class="col-4 px-0" ><a href="#"><img onmouseover="blurred(this)" onmouseout="normal(this)" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/C5Y10KIIHA.jpg" class="img-thumbnail img-fluid" alt="" style="border:0;padding:0;"></a></div>
+        <div class="col-4 px-0" ><a href="#"><img onmouseover="blurred(this)" onmouseout="normal(this)" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/YSSFRY5B25.jpg" class="img-thumbnail img-fluid" alt="" style="border:0;padding:0;"></a></div>
+
+      </div>
+    <!-- </div> -->
+  </div>
+
+  <!-- Need to have JQuery and Javascript for DropDown Actions to work -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script>
+
+    function blurred(x){
+      x.style.filter = "blur(50px)";
+      x.style.filter = "grayscale(100%)";
+    }
+
+    function normal(x){
+      x.style.filter = "blur(0px)";
+      x.style.filter = "grayscale(0%)";
+    }
+  </script>
+
+  {% endblock %}
